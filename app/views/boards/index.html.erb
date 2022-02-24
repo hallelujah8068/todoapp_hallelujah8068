@@ -1,1 +1,26 @@
-<p>index</p>
+<div class="container">
+  <h2>All Boards</h2>
+    <div class="board">
+      <div class="board_title">
+        <p>プログラミング</p>
+      </div>
+      <div class="board_description">
+        <p>RailsでCRUDアプリを作るよ</p>
+      </div>
+      <div class="board_content">
+        <div class="board_detail">
+        <%= image_tag 'default-avatar.png' %>
+        </div>
+        <div class="board_detail_actions">
+          <div class="dropdown">
+            <%= image_tag 'actions.svg', class: 'dropbtn' %>
+            <div class="dropdown-content mini">
+              <a href="#">Edit</a>
+              <a href="">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <a href="" class="btn-secondary">+ Add new board</a>
+</div>
