@@ -11,6 +11,7 @@
         <div class="board_content">
           <div class="board_detail">
             <%= image_tag 'default-avatar.png' %>
+            <p><%= board.author_name %></p>
           </div>
           <% if user_signed_in? && current_user.boards.exists?(id: board.id) %>
             <div class="board_detail_actions">
