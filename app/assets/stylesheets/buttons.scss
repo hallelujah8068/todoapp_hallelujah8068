@@ -17,8 +17,10 @@
     height: 160px;
     border: 1px dashed rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    display: block;
+    display: inline-block;
     text-align: center;
     padding: 68px;
     font-size: 18px;
+    margin-bottom: 30px;
+    color: $primary-color;
 }
