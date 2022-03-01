@@ -11,14 +11,14 @@ emily = User.create(email: 'emily@example.com', password: 'password')
 
 2.times do
     john.boards.create(
-        title: Faker::Lorem.sentence(word_count: 1),
-        description: Faker::Lorem.sentence(word_count: 50)
+        title: Faker::Lorem.word,
+        description: Faker::Lorem.sentence(word_count: 5)
     )
 end
 
 2.times do
     emily.boards.create(
-        title: Faker::Lorem.sentence(word_count: 1),
-        description: Faker::Lorem.sentence(word_count: 50)
+        title: Faker::Lorem.word,
+        description: Faker::Lorem.sentence(word_count: 5)
     )
 end

@@ -52,7 +52,7 @@ body {
 
   a {
       text-decoration: none;
-      color: $primary-color;
+      color: $text-base-color;
       font-weight: bold;
   }
 }
@@ -60,6 +60,5 @@ body {
 .container {
   padding: 0 16px;
   width: 100%;
-  height: 100%;
   position: relative;
 }
