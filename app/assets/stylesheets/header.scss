@@ -41,10 +41,20 @@ $header-padding-y: 8px;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border-radius: 10px;
+
+  &.mini {
+      min-width: 100px;
+
+    a {
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
 }
 
 .dropdown-content a {
-  padding: 8px 16px;
+  padding: 10px 14px;
   text-decoration: none;
   display: block;
   color: $text-base-color;
