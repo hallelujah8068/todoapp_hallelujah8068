@@ -26,14 +26,17 @@ $avatar-size-mini: 30px;
     &_content {
 
         .board_detail {
+            display: flex;
+            p {
+               margin-left: 5px; 
+               line-height: 2;
+            }
+
             img {
                 width: $avatar-size-mini;
                 height: $avatar-size-mini;
                 cursor: pointer;
                 border-radius: 100%;
-                position: absolute;
-                bottom:20px;
-                left: 20px;
             }
         }
 
