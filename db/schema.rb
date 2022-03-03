@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_03_01_141516) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "board_id", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.string "title", null: false
     t.text "description", null: false
     t.date "deadline"
