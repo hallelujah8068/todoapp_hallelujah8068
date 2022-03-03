@@ -9,7 +9,6 @@ input {
     &.text {
       width: 100%;
       margin-bottom: 30px;
-      margin-top: 8px;
       padding: 16px 24px;
       border: 1px solid #EBEBEB;
       background-color: $form-bg-color;
@@ -18,13 +17,14 @@ input {
   }
   
   label {
+    display: block;
     font-size: 18px;
+    margin-bottom: 8px;
   }
   
   textarea {
     width: 100%;
     padding: 8px 8px;
-    margin-top: 8px;
     min-height: 440px;
     resize: vertical;
     border: 1px solid #EBEBEB;

@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Brackets</h2>
+    <% @tasks.each do |task| %>
+      <div class="board">
+        <div class="board_title">
+          <%= task.title %>
+        </div>
+        <div class="board_description">
+          <%= task.description %>
+        </div>
+        <div class="board_content">
+          <div class="board_detail">
+            <%= image_tag 'default-avatar.png' %>
+            <p><%= task.author_name %></p>
+          </div>
+          <% if user_signed_in? && current_user.tasks.exists?(id: task.id) %>
+            <div class="board_detail_actions">
+              <div class="dropdown">
+                <%= image_tag 'actions.svg', class: 'dropbtn' %>
+                <div class="dropdown-content mini">
+                  <%= link_to '編集', edit_board_task_path(task) %>
+                  <%= link_to '削除', edit_board_task_path(task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' } %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div> 
+      </div>
+    <% end %>
+  <%= link_to 'Add new card', new_board_task_path, class: 'btn-secondary' %>
+</div>
