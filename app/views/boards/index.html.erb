@@ -1,31 +1,33 @@
 <div class="container">
   <h2>All Boards</h2>
     <% @boards.each do |board| %>
-      <div class="board">
-        <div class="board_title">
-          <%= board.title %>
-        </div>
-        <div class="board_description">
-          <%= board.description %>
-        </div>
-        <div class="board_content">
-          <div class="board_detail">
-            <%= image_tag 'default-avatar.png' %>
-            <p><%= board.author_name %></p>
+      <%= link_to new_board_task_path(board_id: board.id) do %>
+        <div class="board">
+          <div class="board_title">
+            <%= board.title %>
           </div>
-          <% if user_signed_in? && current_user.boards.exists?(id: board.id) %>
-            <div class="board_detail_actions">
-              <div class="dropdown">
-                <%= image_tag 'actions.svg', class: 'dropbtn' %>
-                <div class="dropdown-content mini">
-                  <%= link_to '編集', edit_board_path(board) %>
-                  <%= link_to '削除', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' } %>
+          <div class="board_description">
+            <%= board.description %>
+          </div>
+          <div class="board_content">
+            <div class="board_detail">
+              <%= image_tag 'default-avatar.png' %>
+              <p><%= board.author_name %></p>
+            </div>
+            <% if user_signed_in? && current_user.boards.exists?(id: board.id) %>
+              <div class="board_detail_actions">
+                <div class="dropdown">
+                  <%= image_tag 'actions.svg', class: 'dropbtn' %>
+                  <div class="dropdown-content mini">
+                    <%= link_to '編集', edit_board_path(board) %>
+                    <%= link_to '削除', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' } %>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </div> 
-      </div>
+            <% end %>
+          </div> 
+        </div>
+      <% end %>
     <% end %>
   <%= link_to 'Add new board', new_board_path, class: 'btn-secondary', class: 'btn-secondary' %>
 </div>
