@@ -13,6 +13,7 @@ input {
       border: 1px solid #EBEBEB;
       background-color: $form-bg-color;
       height: 40px;
+      display: inline-block;
     }
   }
   
@@ -30,6 +31,7 @@ input {
     border: 1px solid #EBEBEB;
     background-color: $form-bg-color;
     border-radius: 10px;
+    margin-bottom: 40px;
   }
 
   ul {

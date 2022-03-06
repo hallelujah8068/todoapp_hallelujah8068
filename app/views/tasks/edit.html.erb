@@ -1,8 +1,5 @@
 <div class="container">
   <h2>New Card</h2>
-  <div class="task_btn">
-    <%= link_to 'Task一覧', board_tasks_path %>
-  </div>
   <ul>
     <% @task.errors.full_messages.each do |message| %>
       <li>
