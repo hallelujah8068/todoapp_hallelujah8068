@@ -22,3 +22,4 @@ end
         description: Faker::Lorem.sentence(word_count: 5)
     )
 end
+
