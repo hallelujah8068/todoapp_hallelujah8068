@@ -12,6 +12,23 @@ $avatar-size-mini: 30px;
     position: relative;
     border-radius: 10px;
 
+    &_eyecatch {
+        height: 170px;
+        overflow: hidden;
+        position: relative;
+        margin:30px 0;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          width: 100%;
+        }
+    }
+
     &_title {
         font-size: 18px;
         margin-bottom: 6px;
@@ -43,7 +60,7 @@ $avatar-size-mini: 30px;
         .board_detail_actions {
             .dropdown {
                 position: absolute;
-                top: 33px;
+                bottom: 39px;
                 right: 16px;
             }
         }

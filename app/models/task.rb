@@ -6,4 +6,8 @@ class Task < ApplicationRecord
     belongs_to :user
     has_one_attached :eyecatch
 
+    def author_name
+        user.display_name
+    end
+
 end

@@ -1,13 +1,7 @@
 <div class="container">
   <h2>All Tasks</h2>
     <% @tasks.each do |task| %>
-      <%= link_to board_task_path(id: task.id) do %>
         <div class="board">
-          <% if task.eyecatch.attached? %>
-            <div class="board_eyecatch">
-              <%= image_tag task.eyecatch %>
-            </div>
-          <% end %>
           <div class="board_title">
             <%= task.title %>
           </div>
@@ -24,15 +18,14 @@
                 <div class="dropdown">
                   <%= image_tag 'actions.svg', class: 'dropbtn' %>
                   <div class="dropdown-content mini">
-                    <%= link_to '編集', edit_board_task_path(id: task.id) %>
-                    <%= link_to '削除', board_task_path(id: task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' } %>
+                    <%= link_to '編集', edit_board_task_path(board) %>
+                    <%= link_to '削除', board_task_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' } %>
                   </div>
                 </div>
               </div>
             <% end %>
           </div> 
         </div>
-      <% end %>
     <% end %>
-  <%= link_to 'Add new Task', new_board_task_path, class: 'btn-secondary', class: 'btn-secondary' %>
+  <%= link_to 'Add new board', new_board_path, class: 'btn-secondary', class: 'btn-secondary' %>
 </div>
