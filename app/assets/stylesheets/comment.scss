@@ -1,0 +1,25 @@
+@import './variables';
+@import './board.scss';
+
+.comment_detail {
+    margin-bottom: 30px;
+    display: flex;
+    position: relative;
+
+    img {
+        width: $avatar-size-mini;
+        height: $avatar-size-mini;
+        cursor: pointer;
+        border-radius: 100%;
+    }
+    
+    p {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 30px;
+        margin-left: 10px;
+    }
+
+}
