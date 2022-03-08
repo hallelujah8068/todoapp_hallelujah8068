@@ -7,8 +7,9 @@ class TasksController < ApplicationController
     end
 
     def show
-        board = Board.find(params[:board_id])
+        @board = Board.find(params[:board_id])
         @task = Task.find(params[:id])
+        @comments = @task.comments
     end
 
     def new
@@ -17,8 +18,8 @@ class TasksController < ApplicationController
     end
 
     def create
-        board = Board.find(params[:board_id])
-        @task = board.tasks.build(task_params)
+        @board = Board.find(params[:board_id])
+        @task = @board.tasks.build(task_params)
         @task.user_id = current_user.id
         if @task.save
             redirect_to board_tasks_path(params[:board_id]), notice: '保存できたよ'
@@ -34,8 +35,8 @@ class TasksController < ApplicationController
     end
 
     def update
-        board = Board.find(params[:board_id])
-        @task = board.tasks.find(params[:id])
+        @board = Board.find(params[:board_id])
+        @task = @board.tasks.find(params[:id])
         if @task.update(task_params)
           redirect_to board_tasks_path(params[:board_id]), notice: '更新できました'
         else

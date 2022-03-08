@@ -28,4 +28,15 @@
       </div>
     </div>
   </div>
+  <div class="comment">
+    <h2 class="comment_title">Comment</h2>
+    <div class="comment_index">
+      <% @comments.each do |comment| %>
+      <div class="comment_detail">
+        <%= image_tag 'default-avatar.png' %>
+        <p><%= comment.content %></p>
+        </div>
+      <% end %>
+  </div>
+  <%= link_to 'Add new comment', new_board_task_comment_path(@task.board_id, @task), class: 'btn-comment' %>
 </div>
